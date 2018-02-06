@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <title>Destroy</title>
+</head>
+
+<body>
+    <div class="container">
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td>{{course.course_name}}</td>
+            </tr>
+            <tr>
+                <td>Description:</td>
+                <td>{{course.course_description}}</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td>
+                    <form action="/">
+                        <input type="submit" name="" value="No">
+                    </form>
+                </td>
+                <td>
+                    <form action="/confirm/{{course.id}}" method="post">
+                        {% csrf_token %}
+                        <input style="color:white; background-color:red;" type="submit" name="" value="Yes! I want to delete this">
+                    </form>
+                </td>
+            </tr>
+        </table>
+</body>
+
+</html>
